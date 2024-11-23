@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#41729f;
+    --secondary-color:#5885af;
+}
+
+body{
+    background-color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+}
+
+.search-movie{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #000;
+    font-family: inherit;
+}
+
+.search-movie:focus{
+    outline: 0;
+    background-color: #c3e0e5;
+}
+
+.search-movie::placeholder{
+    color: #274472;
+}
+
+#main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.movie{
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.movie img{
+    width: 100%;
+}
+
+.movie-information{
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-information h3{
+    margin-top: 0;
+}
+
+.movie-information span{
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-information span.points-movie{
+    color: lightgreen;
+}
+
+.movie-information span.points-movie-green{
+    color: lightgreen;
+}
+
+.movie-information span.points-movie-orange{
+    color: orange;
+}
+
+.movie-information span.points-movie-red{
+    color: red;
+}
+
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition:transform 0.3s ease-in;
+}
+
+.overview h3{
+    color: #274472;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
