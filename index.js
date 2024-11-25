@@ -20,25 +20,26 @@ function getMovies(url) {
     });
 }
 
+
 function showMovies(data) {
-  main.innerHTML = ";";
+  main.innerHTML = "";
 
   data.forEach((movie) => {
-    const { id,title, poster_path, vote_average, overview } = movie;
-    const movieElement = document.createElement("div");
+    const { title, poster_path, vote_average, overview } = movie;
+    const movieElement = document.createElement("section");
     movieElement.classList.add("movie");
     movieElement.innerHTML = `
         <img src="${IMG_URL + poster_path}" alt="${title}" />
 
-        <div class="movie-information">
+        <article class="movie-information">
           <h3>${title}</h3>
           <span class="${getColor(vote_average)}">${vote_average}</span>
-        </div>
+        </article>
 
-        <div class="overview">
+        <article class="overview">
             <h3>Descripción General</h3>
           ${overview}
-        </div>
+        </article>
         `;
 
     main.appendChild(movieElement);
@@ -54,6 +55,7 @@ function showMovies(data) {
     }
   }
 }
+
 
 formMovie.addEventListener('submit', (e) => {
   e.preventDefault();

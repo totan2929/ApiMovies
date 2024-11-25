@@ -5,6 +5,7 @@
 :root{
     --primary-color:#41729f;
     --secondary-color:#5885af;
+    --third-color:#274472;
 }
 
 body{
@@ -36,7 +37,7 @@ header{
 }
 
 .search-movie::placeholder{
-    color: #274472;
+    color: var(--third-color);
 }
 
 #main{
@@ -80,12 +81,10 @@ header{
     font-weight: bold;
 }
 
-.movie-information span.points-movie{
-    color: lightgreen;
-}
+
 
 .movie-information span.points-movie-green{
-    color: lightgreen;
+    color: rgb(47, 233, 47);
 }
 
 .movie-information span.points-movie-orange{
@@ -110,7 +109,7 @@ header{
 }
 
 .overview h3{
-    color: #274472;
+    color: var(--third-color);
 }
 
 .movie:hover .overview{
